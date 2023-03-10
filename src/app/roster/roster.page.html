@@ -15,9 +15,17 @@
         <ion-icon *ngIf="student.status==='present'" slot="end" name="eye"></ion-icon>
         <ion-icon *ngIf="student.status==='absent'" slot="end" name="eye-off-outline"></ion-icon>
         <ion-item-options side="end">
-          <ion-item-option color="danger">Delete</ion-item-option>
+          <ion-item-option color="danger" (click)="deleteStudent(student)">Delete</ion-item-option>
 
         </ion-item-options>
+        <ion-buttons slot="end">
+          <ion-button (click)="presentActionSheet(student)">
+            <ion-icon slot="icon-only" name="ellipsis-horizontal-outline"></ion-icon>
+          </ion-button>
+          <ion-button>
+            <ion-icon slot="icon-only" name="chevron-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
 
 
       </ion-item>

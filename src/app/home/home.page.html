@@ -7,14 +7,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <img src="../../assets/images/classroom.jpg">
+    <ion-card-header>
+      <ion-card-subtitle>
+        Classroom Attendance Manager
+      </ion-card-subtitle>
+      <ion-card-title>
+        @10dance</ion-card-title>
+      <ion-card-content>
+        <p>
+          @10dance is an attendance application originally designed to help teachers keep track of students in their
+          classes
+        </p>
+        <a routerDirection="forward" routerLink="/roster">Roster</a>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

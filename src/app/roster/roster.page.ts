@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Student, StudentsService } from '../../students.service';
-import { ActionSheetController, AlertController } from '@ionic/angular';
+import { ActionSheetController, AlertController, ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -14,12 +14,20 @@ export class RosterPage implements OnInit {
   constructor(
     private actionSheetController: ActionSheetController,
     private alertController: AlertController,
-    private studentService: StudentsService
+    private studentService: StudentsService,
+    private toastController: ToastController
   ) 
   { }
 
   async deleteStudent(student: Student) {
     this.students = this.students.filter(x => x.id !== student.id);
+    const alert = await this.toastController.create({
+      message: `${student.firstName} ${student.lastName} has been deleted.`,
+      position: 'top',
+      duration: 2000
+    });
+
+    await alert.present();  
   }
 
   async presentDeleteAlert(student: Student) {
